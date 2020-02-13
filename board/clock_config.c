@@ -110,6 +110,7 @@ settings:
 - {id: MCG.IREFS.sel, value: MCG.FRDIV}
 - {id: MCG.PLLS.sel, value: MCG.PLL}
 - {id: MCG.PRDIV.scale, value: '2'}
+- {id: MCG_C2_OSC_MODE_CFG, value: ModeOscLowPower}
 - {id: MCG_C2_RANGE0_CFG, value: Very_high}
 - {id: MCG_C2_RANGE0_FRDIV_CFG, value: Very_high}
 - {id: OSC0_CR_ERCLKEN_CFG, value: Enabled}
@@ -152,7 +153,7 @@ const osc_config_t oscConfig_BOARD_BootClockRUN =
     {
         .freq = 8000000U,                         /* Oscillator frequency: 8000000Hz */
         .capLoad = (OSC_CAP0P),                   /* Oscillator capacity load: 0pF */
-        .workMode = kOSC_ModeExt,                 /* Use external clock */
+        .workMode = kOSC_ModeOscLowPower,         /* Oscillator low power */
         .oscerConfig =
             {
                 .enableMode = kOSC_ErClkEnable,   /* Enable external reference clock, disable external reference clock in STOP mode */

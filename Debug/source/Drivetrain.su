@@ -1,0 +1,4 @@
+Drivetrain.c:12:6:initDrivetrain	8	static
+Drivetrain.c:41:6:setPercentOutputX	16	static
+Drivetrain.c:45:6:setDirection	16	static
+Drivetrain.c:55:6:setTheta	16	static

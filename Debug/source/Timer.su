@@ -1,0 +1,2 @@
+Timer.c:10:6:initTimer	8	static
+Timer.c:18:6:delay	24	static
