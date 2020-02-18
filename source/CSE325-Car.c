@@ -61,7 +61,7 @@ int main(void) {
     BOARD_InitDebugConsole();
     initDrivetrain();
     initTimer();
-    driveSquare();
+    driveCircle();
 
     return 0 ;
 }

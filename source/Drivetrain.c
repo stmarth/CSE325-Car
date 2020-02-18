@@ -16,7 +16,7 @@ void initDrivetrain() {
 	PORTB->PCR[2] |= 0b011 << 8; // Set pinmux to use TPM
 	SIM->SCGC6 |= 1 << 26; // Enable clock gating to TPM module.
 	TPM2->SC|=100;  //Precale down by 16;
-	TPM2->MOD = 6000;  //At 48MHz, this should trigger an overflow exactly every 20ms, or at 50Hz, which, according to the internet, is the correct frequency for cheap servos.
+	TPM2->MOD = 6000;  //At 48MHz, this should trigger an overflow exactly every 2ms, or at 500Hz, which, according to the internet, is the correct frequency for cheap servos.
 	TPM2->CONTROLS[0].CnSC |= 0b1010 << 2;  //Set PWM to pulse low on true, so modulo controls pulse width.
 	TPM2->CONF |= 0b11 < 6;  //Allow TPM to run in debug mode.
 	setTheta(0);  //Make sure steering is neutral at boot

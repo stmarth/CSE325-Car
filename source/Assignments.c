@@ -17,6 +17,8 @@ void driveCircle(){
 	setTheta(theta);
 	setPercentOutputX(speed);
 	delay(time);
+	setPercentOutputX(800);
+	delay(3225);
 	setTheta(0);
 	setPercentOutputX(0);
 }
