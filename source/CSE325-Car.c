@@ -39,6 +39,10 @@
 #include "clock_config.h"
 #include "MKL46Z4.h"
 #include "fsl_debug_console.h"
+#include "Drivetrain.h"
+#include "Constants.h"
+#include "Timer.h"
+#include "Assignments.h"
 /* TODO: insert other include files here. */
 
 /* TODO: insert other definitions and declarations here. */
@@ -46,25 +50,18 @@
 /*
  * @brief   Application entry point.
  */
+
 int main(void) {
 
   	/* Init board hardware. */
-    BOARD_InitBootPins();
+	BOARD_InitBootPins();
     BOARD_InitBootClocks();
     BOARD_InitBootPeripherals();
   	/* Init FSL debug console. */
     BOARD_InitDebugConsole();
+    initDrivetrain();
+    initTimer();
+    driveCircle();
 
-    PRINTF("Hello World\n");
-
-    /* Force the counter to be placed into memory. */
-    volatile static int i = 0 ;
-    /* Enter an infinite loop, just incrementing a counter. */
-    while(1) {
-        i++ ;
-        /* 'Dummy' NOP to allow source level single stepping of
-            tight while() loop */
-        __asm volatile ("nop");
-    }
     return 0 ;
 }
